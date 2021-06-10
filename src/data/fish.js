@@ -20,14 +20,16 @@ const fish = {
             "name": "BASS",
             "description": "Bet you're sick of catching these...",
             "value": 1,
-            "image": ""
+            "image": "",
+            "rarity": "common"
         },
         {
             "id": 2,
             "name": "GOBLIN FISH",
             "description": "Roll initiative!",
             "value": 2,
-            "image": ""
+            "image": "",
+            "rarity": "common"
         },
         
     ],
@@ -37,28 +39,32 @@ const fish = {
             "name": "FISHMAIL",
             "description": "Would you like a rod enhancement?",
             "value": 10,
-            "image": ""
+            "image": "",
+            "rarity": "uncommon"
         },
         {
             "id": 7,
             "name": "DOGEFISH",
             "description": "Woof!",
             "value": 80,
-            "image": ""
+            "image": "",
+            "rarity": "uncommon"
         },
         {
             "id": 10,
             "name": "FISHBRO",
             "description": "Hell yeah, bro!",
             "value": 69,
-            "image": ""
+            "image": "",
+            "rarity": "uncommon"
         },
         {
             "id": 13,
             "name": "HOLY FISH",
             "description": "Bless you!",
             "value": 50,
-            "image": ""
+            "image": "",
+            "rarity": "uncommon"
         },
 
     ],
@@ -68,28 +74,32 @@ const fish = {
             "name": "PHISH",
             "description": "This one seems fishy...",
             "value": 500,
-            "image": ""
+            "image": "",
+            "rarity": "rare"
         },
         {
             "id": 4,
             "name": "FISHERMAN",
             "description": "Whoopsie daisy",
             "value": 1000,
-            "image": ""
+            "image": "",
+            "rarity": "rare"
         },
         {
             "id": 5,
             "name": "CREDIT FISH",
             "description": "CHA-CHING!",
             "value": 700,
-            "image": ""
+            "image": "",
+            "rarity": "rare"
         },
         {
             "id": 11,
             "name": "NO FISH",
             "description": "There's nothing here! It's still worth something though.",
             "value": 400,
-            "image": ""
+            "image": "",
+            "rarity": "rare"
         },
 
     ],
@@ -99,21 +109,24 @@ const fish = {
             "name": "FISHCOIN",
             "description": "K walk,nxjcka,8*can fire Any 3rd hear 22 hi",
             "value": 3000,
-            "image": ""
+            "image": "",
+            "rarity": "exotic"
         },
         {
             "id": 12,
             "name": "NEMO",
             "description": "You found him!",
             "value": 5000,
-            "image": ""
+            "image": "",
+            "rarity": "exotic"
         },
         {
             "id": 14,
             "name": "LEFT BOOT",
             "description": "Now we're talking",
             "value": 9999,
-            "image": ""
+            "image": "",
+            "rarity": "exotic"
         },
 
 
@@ -124,7 +137,8 @@ const fish = {
             "name": "SHARK FISH",
             "description": "You're funded!",
             "value": 99999,
-            "image": ""
+            "image": "",
+            "rarity": "legendary"
         },
     ]
 }

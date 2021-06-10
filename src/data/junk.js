@@ -14,7 +14,8 @@ const junk = [
         "description": "I dare you to lick it.",
         "value": 0,
         "rarity": 3,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 2,
@@ -22,7 +23,8 @@ const junk = [
         "description": "Do people still buy these?",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@ const junk = [
         "description": "If this was a left boot it might be worth something.",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 4,
@@ -38,7 +41,8 @@ const junk = [
         "description": "SCISSORS! Damn...",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 5,
@@ -46,7 +50,8 @@ const junk = [
         "description": "If this was a mining game, this would be worth something.",
         "value": 0,
         "rarity": 3,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 6,
@@ -54,7 +59,8 @@ const junk = [
         "description": "Yay! You caught an OH SHI-",
         "value": -100,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 7,
@@ -62,7 +68,8 @@ const junk = [
         "description": "Crabs are priceless. Better put him back.",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 8,
@@ -70,7 +77,8 @@ const junk = [
         "description": "Get some aloe for that burn lol.",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     }
 ]
 
