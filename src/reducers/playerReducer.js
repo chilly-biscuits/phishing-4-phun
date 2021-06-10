@@ -21,18 +21,17 @@ const playerReducer = (state, action) => {
     case 'setHat':
       return{
         ...state,
-        "inventory" : {
-          ...state,
+        "inventory" : {  
+          ...state.inventory,        
           "hatId": action.data
         }
       }
 
     case 'setBait':
-  
       return{
         ...state,
         "inventory" : {
-          ...state,
+          ...state.inventory,
           "baitId": action.data
         }
       }
@@ -41,7 +40,7 @@ const playerReducer = (state, action) => {
       return{
         ...state,
         "inventory" : {
-          ...state,
+          ...state.inventory,
           "rodId": action.data
         }
       }
