@@ -7,8 +7,10 @@ import CurrentFishBox   from './components/CurrentFishBox';
 import PlayerContainer  from './components/PlayerContainer';
 import PlayerInventory  from './components/PlayerInventory';
 import UpgradeStore     from './components/UpgradeStore';
+import FirstLoad        from './components/FirstLoad'
 // utilities
 import loadPlayer       from './utils/loadPlayer' 
+
 import savePlayer       from  './utils/savePlayer'
 import { hats } from './data/hats';
 import { rods } from './data/rods';
@@ -21,23 +23,14 @@ const App = () => {
     initialStorage
   )
 
-
   // onLoad
   useEffect(() => {
+    checkName()
     loadPlayer(dispatch)
   },[])
   
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    savePlayer(store)
-  } 
-
-  const handleChange = (event) => {
-    dispatch({
-      type: 'setName',
-      data: event.target.value
-    })
+  const checkName = () => {
+    if(store.name) setHasName(true)
   }
 
   const handleHat = (event) => {
@@ -61,18 +54,24 @@ const App = () => {
 
   return (
     <div className="App">
-      <PlayerContainer />
-      <CurrentFishBox/>
-      <UpgradeStore />
-      <PlayerInventory />
-      <h1>Name: {store.name}</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} ></input>
-        <button type="submit" value={store.name}>Submit</button>
-        <button onClick={handleHat} value={4}>Buy pirate hat</button>
-        <button onClick={handleHat} value={1}>Buy bucket hat</button>
-        <p>Hat: {printHat(store.inventory.hatId)}</p>
-        <p>Hat Mod: {printHatMod(store.inventory.hatId)}</p>
+        {hasName ?
+        <>
+          <PlayerContainer />
+          <CurrentFishBox/>
+          <UpgradeStore />
+          <PlayerInventory />
+        </>:
+        <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>
+} 
+            // AIDAN - TESTING - WILL REMOVE
+            <h1>Name: {store.name}</h1>
+            <form onSubmit={handleSubmit}>
+            <input type="text" onChange={handleChange} ></input>
+            <button type="submit" value={store.name}>Submit</button>
+            <button onClick={handleHat} value={4}>Buy pirate hat</button>
+            <button onClick={handleHat} value={1}>Buy bucket hat</button>
+            <p>Hat: {printHat(store.inventory.hatId)}</p>
+            <p>Hat Mod: {printHatMod(store.inventory.hatId)}</p>
       </form>
     </div>
   );
