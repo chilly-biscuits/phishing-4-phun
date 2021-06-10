@@ -45,6 +45,15 @@ const playerReducer = (state, action) => {
         }
       }
 
+      case 'setMod':
+        return{
+          ...state,
+          "inventory" : {
+            ...state.inventory,
+            "rodId": action.data
+          }
+        }
+
     default: {
       return null
     }
