@@ -13,7 +13,7 @@ export const baits = [
         "modifier": 1,
         "description":'Ohh Ha Ha',
         "img":'' ,
-        "cost": 1
+        "cost": 15
      },
      {
         "id": 3,
@@ -21,7 +21,7 @@ export const baits = [
         "modifier": 1,
         "description":'Yum...',
         "img":'' ,
-        "cost": 1
+        "cost": 2
      },
      {
         "id": 4,
@@ -29,7 +29,7 @@ export const baits = [
         "modifier": 1,
         "description":"I don't know if this is healthy",
         "img":'' ,
-        "cost": 1
+        "cost": 10
      },
      {
         "id": 5,
@@ -37,6 +37,6 @@ export const baits = [
         "modifier": 1,
         "description":'Everybody loves Pizza',
         "img":'' ,
-        "cost": 1
+        "cost": 5
      },
 ]
