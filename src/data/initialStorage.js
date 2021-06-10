@@ -1,6 +1,6 @@
 const initialStorage = {
   "name": "",
-  "money": 0,
+  "money": 1,
   "playerModifier": 0,
   "inventory": {
     "hatId":  1,

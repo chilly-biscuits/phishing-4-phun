@@ -13,7 +13,7 @@ export const rods = [
         "modifier": 1,
         "description":'Looks pretty beaten up but should do the job',
         "img":'',
-        "cost": 1 
+        "cost": 5
      },
      {
         "id": 3,
@@ -21,7 +21,7 @@ export const rods = [
         "modifier": 1,
         "description":'A regular rod',
         "img":'',
-        "cost": 1 
+        "cost": 20
      },
      {
         "id": 4,
@@ -29,7 +29,7 @@ export const rods = [
         "modifier": 1,
         "description":'The same as the normal rod but faster',
         "img":'',
-        "cost": 1 
+        "cost": 200
      },
      {
         "id": 5,
@@ -37,6 +37,6 @@ export const rods = [
         "modifier": 1,
         "description":'So fancy!',
         "img":'',
-        "cost": 1 
+        "cost": 99999
      },
 ]

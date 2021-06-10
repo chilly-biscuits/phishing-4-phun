@@ -18,6 +18,12 @@ const playerReducer = (state, action) => {
         "money": state.money + action.data
       }
 
+    case 'spendMoney':
+      return{
+        ...state,
+        "money": state.money - action.data
+      }
+
     case 'setHat':
       return{
         ...state,
