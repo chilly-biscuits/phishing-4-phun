@@ -7,6 +7,7 @@ import CurrentFishBox   from './components/CurrentFishBox';
 import PlayerContainer  from './components/PlayerContainer';
 import PlayerInventory  from './components/PlayerInventory';
 import UpgradeStore     from './components/UpgradeStore';
+import FirstLoad        from './components/FirstLoad'
 // utilities
 import loadPlayer       from './utils/loadPlayer' 
 import savePlayer       from  './utils/savePlayer'
@@ -41,10 +42,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <PlayerContainer />
-      <CurrentFishBox/>
-      <UpgradeStore />
-      <PlayerInventory />
+        {store.name ?
+        <>
+          <PlayerContainer />
+          <CurrentFishBox/>
+          <UpgradeStore />
+          <PlayerInventory />
+        </>:
+        <FirstLoad />
+      }
       <h1>Name: {store.name}</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} ></input>
