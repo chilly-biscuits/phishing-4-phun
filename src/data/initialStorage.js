@@ -1,5 +1,5 @@
 const initialStorage = {
-  "name": "defaultName",
+  "name": "",
   "money": 0,
   "playerModifier": 0,
   "inventory": {
