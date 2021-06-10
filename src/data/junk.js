@@ -10,67 +10,75 @@
 const junk = [
     {
         "id": 1,
-        "junkName": "ALGAE",
+        "name": "ALGAE",
         "description": "I dare you to lick it.",
         "value": 0,
         "rarity": 3,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 2,
-        "junkName": "NEWSPAPER",
+        "name": "NEWSPAPER",
         "description": "Do people still buy these?",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 3,
-        "junkName": "RIGHT BOOT",
+        "name": "RIGHT BOOT",
         "description": "If this was a left boot it might be worth something.",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 4,
-        "junkName": "ROCK",
+        "name": "ROCK",
         "description": "SCISSORS! Damn...",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 5,
-        "junkName": "IRON",
+        "name": "IRON",
         "description": "If this was a mining game, this would be worth something.",
         "value": 0,
         "rarity": 3,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 6,
-        "junkName": "MIMIC",
+        "name": "MIMIC",
         "description": "Yay! You caught an OH SHI-",
         "value": -100,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 7,
-        "junkName": "CRAB",
+        "name": "CRAB",
         "description": "Crabs are priceless. Better put him back.",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     },
     {
         "id": 8,
-        "junkName": "YOU",
+        "name": "YOU",
         "description": "Get some aloe for that burn lol.",
         "value": 0,
         "rarity": 2,
-        "image": ""
+        "image": "",
+        "rarity": "junk"
     }
 ]
 

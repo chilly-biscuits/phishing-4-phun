@@ -32,13 +32,18 @@ const CurrentFishBox = () => {
   };
 
   const [caughtFish, setCaughtFish] = useState({});
+  const handleClick = () =>{
+    setCaughtFish(decideResult())
+
+  }
   return (
     <>
       <h1>Fish box</h1>
-      <button onClick={() => setCaughtFish(decideResult())}>
+      <button onClick={() => handleClick()}>
         Click to PHISH
       </button>
-      <p>{caughtFish.description}</p>
+      <p>{"You caught a " + caughtFish.name + "(" + caughtFish.rarity + ")"}</p>
+      <p>"{caughtFish.description}"</p>
     </>
   );
 };
