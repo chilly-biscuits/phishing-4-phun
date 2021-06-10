@@ -31,14 +31,10 @@ const App = () => {
   return (
 
     <div className="App">
-      <div>
-        <PlayerContainer />
-        <CurrentFishBox/>
-        <UpgradeStore />
-        <PlayerInventory />
-      </div>
-
-    <div>
+      <PlayerContainer />
+      <CurrentFishBox/>
+      <UpgradeStore />
+      <PlayerInventory />
       <h1>Hello World</h1>
       <p>{player.money}</p>
     </div>
