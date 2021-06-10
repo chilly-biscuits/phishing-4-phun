@@ -1,14 +1,15 @@
-
-
-import React, {useEffect, useReducer} from 'react';
-import initialStorage from './data/initialStorage'
-
-import playerReducer from './reducers/playerReducer.js'
-//components
-import CurrentFishBox from './components/CurrentFishBox';
-import PlayerContainer from './components/PlayerContainer';
-import PlayerInventory from './components/PlayerInventory';
-import UpgradeStore from './components/UpgradeStore';
+import React, {useEffect, useReducer, useState} from 'react';
+import initialStorage   from './data/initialStorage'
+// reducer-state
+import playerReducer    from './reducers/playerReducer.js'
+// components
+import CurrentFishBox   from './components/CurrentFishBox';
+import PlayerContainer  from './components/PlayerContainer';
+import PlayerInventory  from './components/PlayerInventory';
+import UpgradeStore     from './components/UpgradeStore';
+// utilities
+import loadPlayer       from './utils/loadPlayer' 
+import savePlayer       from  './utils/savePlayer'
 
 const App = () => {
   // const [player, setPlayer] = useState(initialStorage)
@@ -17,46 +18,38 @@ const App = () => {
     initialStorage
   )
 
+  const [input, setInput] = useState('')
+
 
   // onLoad
   useEffect(() => {
-    loadPlayer()
+    loadPlayer(dispatch)
   },[])
   
-  // Create player and save to local storage if one doesnt exist || load player from local storage
-  const loadPlayer = () => {
-  if(!localStorage.getItem('player')){
-    localStorage.setItem('player', JSON.stringify(initialStorage))
-  } else {
-    const currentPlayer = JSON.parse(localStorage.getItem('player'))
-    dispatch({type: 'setName', data: currentPlayer.name})
-    dispatch({type: 'setMoney', data: currentPlayer.money})
-    dispatch({type: 'setHat', data: currentPlayer.inventory.hatId})
-    dispatch({type: 'setBait', data: currentPlayer.inventory.baitId})
-    dispatch({type: 'setRod', data: currentPlayer.inventory.rodId})
-  }
-  }
 
-  const handleClick = () => {
-    dispatch(
-      {
-        type: 'setMoney',
-        data: 1
-      }
-    )
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    savePlayer(store)
+  } 
 
+  const handleChange = (event) => {
+    dispatch({
+      type: 'setName',
+      data: event.target.value
+    })
+  }
 
   return (
-
     <div className="App">
       <PlayerContainer />
       <CurrentFishBox/>
       <UpgradeStore />
       <PlayerInventory />
-      <h1>Hello World</h1>
-      <p>Current Money : ${store.money}</p>
-      <button onClick={handleClick}>Add One</button>
+      <h1>Name: {store.name}</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" onChange={handleChange} ></input>
+        <button type="submit" value={store.name}>Submit</button>
+      </form>
     </div>
   );
 }
