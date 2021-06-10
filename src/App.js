@@ -1,6 +1,14 @@
+
+
 import React, {useEffect, useReducer} from 'react';
 import initialStorage from './data/initialStorage'
+
 import playerReducer from './reducers/playerReducer.js'
+//components
+import CurrentFishBox from './components/CurrentFishBox';
+import PlayerContainer from './components/PlayerContainer';
+import PlayerInventory from './components/PlayerInventory';
+import UpgradeStore from './components/UpgradeStore';
 
 const App = () => {
   // const [player, setPlayer] = useState(initialStorage)
@@ -38,8 +46,14 @@ const App = () => {
     )
   }
 
+
   return (
-    <div>
+
+    <div className="App">
+      <PlayerContainer />
+      <CurrentFishBox/>
+      <UpgradeStore />
+      <PlayerInventory />
       <h1>Hello World</h1>
       <p>Current Money : ${store.money}</p>
       <button onClick={handleClick}>Add One</button>
