@@ -17,22 +17,16 @@ const App = () => {
     playerReducer,
     initialStorage
   )
-
   const [hasName, setHasName] = useState(false)
-
 
   // onLoad
   useEffect(() => {
-    checkName()
+    if(store.name) setHasName(true)
     loadPlayer(dispatch)
   },[])
-  
-  const checkName = () => {
-    if(store.name) setHasName(true)
-  }
 
   return (
-    <div className="App">
+    <div>
         {hasName ?
         <>
           <PlayerContainer />
