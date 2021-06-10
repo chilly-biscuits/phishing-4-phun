@@ -1,20 +1,12 @@
 const initialStorage = {
+  "name": "defaultName",
   "money": 0,
-  "currentModifiers": 0,
-  "inventory": [
-    {
-      "category": 'hat',
-      "id": 1
-    },
-    {
-      "category": 'bait',
-      "id": 1 
-    },
-    {
-      "category": 'rod',
-      "id": 1 
-    }],
-  "name": "defaultName"
+  "playerModifier": 0,
+  "inventory": {
+    "hatId":  1,
+    "baitId": 1,
+    "rodId": 1
+  }
 }
 
 export default initialStorage
