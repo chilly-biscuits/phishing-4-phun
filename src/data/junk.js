@@ -7,7 +7,7 @@
 //crab - 4
 //you - 5
 
-export const junk = [
+const junk = [
     {
         "id": 1,
         "junkName": "ALGAE",
@@ -73,3 +73,5 @@ export const junk = [
         "image": ""
     }
 ]
+
+export default junk
