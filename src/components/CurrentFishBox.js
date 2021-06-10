@@ -38,6 +38,7 @@ const CurrentFishBox = () => {
       <button onClick={() => setCaughtFish(decideResult())}>
         Click to PHISH
       </button>
+      <p>{caughtFish.name}</p>
       <p>{caughtFish.description}</p>
     </>
   );

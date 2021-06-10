@@ -17,14 +17,14 @@ const fish = {
     common: [
         {
             "id": 1,
-            "fishName": "BASS",
+            "name": "BASS",
             "description": "Bet you're sick of catching these...",
             "value": 1,
             "image": ""
         },
         {
             "id": 2,
-            "fishName": "GOBLIN FISH",
+            "name": "GOBLIN FISH",
             "description": "Roll initiative!",
             "value": 2,
             "image": ""
@@ -34,28 +34,28 @@ const fish = {
     uncommon: [
         {
             "id": 6,
-            "fishName": "FISHMAIL",
+            "name": "FISHMAIL",
             "description": "Would you like a rod enhancement?",
             "value": 10,
             "image": ""
         },
         {
             "id": 7,
-            "fishName": "DOGEFISH",
+            "name": "DOGEFISH",
             "description": "Woof!",
             "value": 80,
             "image": ""
         },
         {
             "id": 10,
-            "fishName": "FISHBRO",
+            "name": "FISHBRO",
             "description": "Hell yeah, bro!",
             "value": 69,
             "image": ""
         },
         {
             "id": 13,
-            "fishName": "HOLY FISH",
+            "name": "HOLY FISH",
             "description": "Bless you!",
             "value": 50,
             "image": ""
@@ -65,28 +65,28 @@ const fish = {
     rare: [
         {
             "id": 3,
-            "fishName": "PHISH",
+            "name": "PHISH",
             "description": "This one seems fishy...",
             "value": 500,
             "image": ""
         },
         {
             "id": 4,
-            "fishName": "FISHERMAN",
+            "name": "FISHERMAN",
             "description": "Whoopsie daisy",
             "value": 1000,
             "image": ""
         },
         {
             "id": 5,
-            "fishName": "CREDIT FISH",
+            "name": "CREDIT FISH",
             "description": "CHA-CHING!",
             "value": 700,
             "image": ""
         },
         {
             "id": 11,
-            "fishName": "NO FISH",
+            "name": "NO FISH",
             "description": "There's nothing here! It's still worth something though.",
             "value": 400,
             "image": ""
@@ -96,21 +96,21 @@ const fish = {
     exotic: [
         {
             "id": 8,
-            "fishName": "FISHCOIN",
+            "name": "FISHCOIN",
             "description": "K walk,nxjcka,8*can fire Any 3rd hear 22 hi",
             "value": 3000,
             "image": ""
         },
         {
             "id": 12,
-            "fishName": "NEMO",
+            "name": "NEMO",
             "description": "You found him!",
             "value": 5000,
             "image": ""
         },
         {
             "id": 14,
-            "fishName": "LEFT BOOT",
+            "name": "LEFT BOOT",
             "description": "Now we're talking",
             "value": 9999,
             "image": ""
@@ -121,7 +121,7 @@ const fish = {
     legendary: [
         {
             "id": 9,
-            "fishName": "SHARK FISH",
+            "name": "SHARK FISH",
             "description": "You're funded!",
             "value": 99999,
             "image": ""
