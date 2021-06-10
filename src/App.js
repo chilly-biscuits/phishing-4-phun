@@ -1,15 +1,21 @@
 import React, {useEffect, useReducer, useState} from 'react';
 import initialStorage   from './data/initialStorage'
+
 // reducer-state
 import playerReducer    from './reducers/playerReducer.js'
+
 // components
 import CurrentFishBox   from './components/CurrentFishBox';
 import PlayerContainer  from './components/PlayerContainer';
 import PlayerInventory  from './components/PlayerInventory';
 import UpgradeStore     from './components/UpgradeStore';
 import FirstLoad        from './components/FirstLoad'
+
 // utilities
 import loadPlayer       from './utils/loadPlayer' 
+
+// styles
+import {LeftBar, MainSection, GameContainer} from './styles/style'
 
 const App = () => {
   // const [player, setPlayer] = useState(initialStorage)
@@ -18,7 +24,7 @@ const App = () => {
     initialStorage
   )
 
-  const [hasName, setHasName] = useState(false)
+  const [hasName, setHasName] = useState(true)
 
 
   // onLoad
@@ -32,15 +38,18 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-        {hasName ?
-        <>
-          <PlayerContainer />
-          <CurrentFishBox/>
-          <UpgradeStore />
-          <PlayerInventory />
-        </>:
-        <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>
+    <div>
+        {! hasName ? <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/> :
+        <GameContainer>
+          <LeftBar>
+            <UpgradeStore />
+            <PlayerInventory />
+          </LeftBar>
+          <MainSection>
+            <PlayerContainer />
+            <CurrentFishBox/>
+          </MainSection>
+        </GameContainer>
       }
     </div>
   );
