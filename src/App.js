@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import initialStorage from './data/initialStorage'
 
-function App() {
+const App = () => {
+  const [player, setPlayer] = useState(initialStorage)
+  
+  // onLoad
+  useEffect(() => {
+    loadPlayer()
+  },[])
+  
+  // Create player and save to local storage if one doesnt exist || load player from local storage
+  const loadPlayer = () => {
+    if(!localStorage.getItem('player')){
+      localStorage.setItem('player', JSON.stringify(initialStorage))
+      setPlayer(initialStorage)
+    } else {
+      const currentPlayer = JSON.parse(localStorage.getItem('player'))
+      setPlayer(currentPlayer)
+    }
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello World</h1>
+      <p>{player.money}</p>
     </div>
   );
 }
