@@ -1,5 +1,11 @@
+
 import React, {useState, useEffect} from 'react';
 import initialStorage from './data/initialStorage'
+//components
+import CurrentFishBox from './components/CurrentFishBox';
+import PlayerContainer from './components/PlayerContainer';
+import PlayerInventory from './components/PlayerInventory';
+import UpgradeStore from './components/UpgradeStore';
 
 const App = () => {
   const [player, setPlayer] = useState(initialStorage)
@@ -21,7 +27,17 @@ const App = () => {
   }
 
 
+
   return (
+
+    <div className="App">
+      <div>
+        <PlayerContainer />
+        <CurrentFishBox/>
+        <UpgradeStore />
+        <PlayerInventory />
+      </div>
+
     <div>
       <h1>Hello World</h1>
       <p>{player.money}</p>
