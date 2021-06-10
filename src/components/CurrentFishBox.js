@@ -7,12 +7,7 @@ import React, { useState } from "react";
 const CurrentFishBox = () => {
   //this needs to be moved out but it can stay here for now until we fix it
   const decideResult = () => {
-    //first decide junk or fish
-    let firstRoll = Math.floor(Math.random() * 2);
-    let caughtCategory = "";
-
-    //then set category
-    caughtCategory = firstRoll ?  "junk" : "fish"
+    const caughtCategory = Math.floor(Math.random() * 2) ?  "junk" : "fish"
     
     //if it rolled junk pick a random junk item
     if (caughtCategory === "junk") {
