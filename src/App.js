@@ -1,6 +1,9 @@
 
-import React, {useState, useEffect} from 'react';
+
+import React, {useEffect, useReducer} from 'react';
 import initialStorage from './data/initialStorage'
+
+import playerReducer from './reducers/playerReducer.js'
 //components
 import CurrentFishBox from './components/CurrentFishBox';
 import PlayerContainer from './components/PlayerContainer';
@@ -8,8 +11,13 @@ import PlayerInventory from './components/PlayerInventory';
 import UpgradeStore from './components/UpgradeStore';
 
 const App = () => {
-  const [player, setPlayer] = useState(initialStorage)
-  
+  // const [player, setPlayer] = useState(initialStorage)
+  const [store, dispatch] = useReducer(
+    playerReducer,
+    initialStorage
+  )
+
+
   // onLoad
   useEffect(() => {
     loadPlayer()
@@ -17,15 +25,26 @@ const App = () => {
   
   // Create player and save to local storage if one doesnt exist || load player from local storage
   const loadPlayer = () => {
-    if(!localStorage.getItem('player')){
-      localStorage.setItem('player', JSON.stringify(initialStorage))
-      setPlayer(initialStorage)
-    } else {
-      const currentPlayer = JSON.parse(localStorage.getItem('player'))
-      setPlayer(currentPlayer)
-    }
+  if(!localStorage.getItem('player')){
+    localStorage.setItem('player', JSON.stringify(initialStorage))
+  } else {
+    const currentPlayer = JSON.parse(localStorage.getItem('player'))
+    dispatch({type: 'setName', data: currentPlayer.name})
+    dispatch({type: 'setMoney', data: currentPlayer.money})
+    dispatch({type: 'setHat', data: currentPlayer.inventory.hatId})
+    dispatch({type: 'setBait', data: currentPlayer.inventory.baitId})
+    dispatch({type: 'setRod', data: currentPlayer.inventory.rodId})
+  }
   }
 
+  const handleClick = () => {
+    dispatch(
+      {
+        type: 'setMoney',
+        data: 1
+      }
+    )
+  }
 
 
   return (
@@ -36,7 +55,8 @@ const App = () => {
       <UpgradeStore />
       <PlayerInventory />
       <h1>Hello World</h1>
-      <p>{player.money}</p>
+      <p>Current Money : ${store.money}</p>
+      <button onClick={handleClick}>Add One</button>
     </div>
   );
 }
