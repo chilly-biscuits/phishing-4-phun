@@ -37,7 +37,7 @@ const App = () => {
         <>
           <PlayerContainer />
           <CurrentFishBox/>
-          <UpgradeStore />
+          <UpgradeStore store={store} dispatch={dispatch} />
           <PlayerInventory />
         </>:
         <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>
