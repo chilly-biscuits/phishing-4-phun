@@ -56,15 +56,24 @@ const CurrentFishBox = ({dispatch, store}) => {
   
   const startCounter = () => setCounter(5);
     
+  const colorForRarity = () => {
+    const fish = caughtFish 
+    if(fish.rarity === "common"){ return "#60A5FA"}
+    if(fish.rarity === "uncommon"){ return "#34d390"}
+    if(fish.rarity === "rare"){ return "#4c1d95"}
+    if(fish.rarity === "exotic"){ return "#fbbf24"}
+    if(fish.rarity === "legendary"){ return "#f472b6"}
+    if(fish.rarity === "junk"){return "#d1d5db"}
+  }
 
   return (
     <div className="fish-box">
       <button disabled={counter} onClick={() => handleClick()}>
         {counter ? counter : "Click to PHISH 🎣"}
       </button>
-      <p>{"You caught a " + caughtFish.name + " (" + caughtFish.rarity + ")"}</p>
-      <p>"{caughtFish.description}"</p>
-      <p>{store.money}</p>
+      <h3 style={{backgroundColor: `${colorForRarity()}`, padding: "2px 8px", borderRadius: "10px"}} >{"You caught a " + caughtFish.name + " (" + caughtFish.rarity + ")"}</h3>
+      <h4 style={{fontStyle : "italic", color: "#444"}}>"{caughtFish.description}"</h4>
+      <h3>{store.name}'s Money: <span style={{padding: "2px 8px", backgroundColor: "#333", color: "orange", borderRadius:"5px"}}>${store.money}</span></h3>
       
             
     </div>

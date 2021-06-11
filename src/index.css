@@ -13,12 +13,13 @@ code {
 }
 
 .App {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: centers;
+  align-items: center;
+  gap: 30px;
   border: 1px solid red;
 }
 
@@ -104,8 +105,6 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-
 }
 
 .fish-box button {
