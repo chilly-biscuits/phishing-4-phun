@@ -29,6 +29,10 @@ const App = () => {
     loadPlayer(dispatch)
   }, [])
 
+  useEffect(() => {
+    savePlayer(store)
+  }, [store.money])
+
   Modal.setAppElement('#root');
 
   const customStyles = {
