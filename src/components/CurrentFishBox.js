@@ -3,12 +3,11 @@
 import fish from "../data/fish";
 import junk from "../data/junk";
 import React, { useState, useEffect } from "react";
-import savePlayer from "../utils/savePlayer"
 
 const CurrentFishBox = ({dispatch, store}) => {
   //this needs to be moved out but it can stay here for now until we fix it
   const decideResult = () => {
-    const caughtCategory = Math.floor(Math.random() * 2) ?  "junk" : "fish"
+    const caughtCategory = Math.floor(Math.random() * 3) ?  "fish" : "junk"
     
     //if it rolled junk pick a random junk item
     if (caughtCategory === "junk") {
