@@ -58,17 +58,16 @@ const CurrentFishBox = ({dispatch, store}) => {
     
 
   return (
-    <>
-      <h1>Fish box</h1>
+    <div className="fish-box">
       <button disabled={counter} onClick={() => handleClick()}>
-        {counter ? counter : "Click to PHISH"}
+        {counter ? counter : "Click to PHISH 🎣"}
       </button>
       <p>{"You caught a " + caughtFish.name + " (" + caughtFish.rarity + ")"}</p>
       <p>"{caughtFish.description}"</p>
       <p>{store.money}</p>
       
             
-    </>
+    </div>
   );
 };
 

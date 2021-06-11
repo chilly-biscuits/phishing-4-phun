@@ -32,10 +32,10 @@ const UpgradeStore = ({store, dispatch}) => {
     const shopRenderHats = (hat, index) => {
         if (hat.id !== parseInt(hatId)) {
             return (
-                <div key={index}>
-                    <p>HAT: {hat.name}</p>
-                    <p>COST: ${hat.cost}</p>
-                    <p>MOD: {hat.modifier}</p>
+                <div className="item-card" key={index}>
+                    <h4>{hat.name}</h4>
+                    <p>price: ${hat.cost}</p>
+                    <p>modifier: +{hat.modifier}</p>
                     <button onClick={(event) => {
                         handleHat(event, dispatch); 
                         handleCost(event, hats, dispatch); 
@@ -49,10 +49,10 @@ const UpgradeStore = ({store, dispatch}) => {
     const shopRenderRods = (rod, index) => {
         if (rod.id !== parseInt(rodId)) {
             return (
-                <div key={index}>
-                    <p>ROD: {rod.name}</p>
-                    <p>COST: ${rod.cost}</p>
-                    <p>MOD: {rod.modifier}</p>
+                <div className="item-card" key={index}>
+                    <h4>{rod.name}</h4>
+                    <p>price: ${rod.cost}</p>
+                    <p>modifier: +{rod.modifier}</p>
                     <button onClick={(event) => {
                         handleRod(event, dispatch); 
                         handleCost(event, rods, dispatch); 
@@ -66,10 +66,10 @@ const UpgradeStore = ({store, dispatch}) => {
     const shopRenderBaits = (bait, index) => {
         if (bait.id !== parseInt(baitId)) {
             return (
-                <div key={index}>
-                    <p>BAIT: {bait.name}</p>
-                    <p>COST: ${bait.cost}</p>
-                    <p>MOD: {bait.modifier}</p>
+                <div className="item-card" key={index}>
+                    <h4>{bait.name}</h4>
+                    <p>price: ${bait.cost}</p>
+                    <p>modifier: +{bait.modifier}</p>
                     <button onClick={(event) => {
                         handleBait(event, dispatch); 
                         handleCost(event, baits, dispatch); 
@@ -83,34 +83,33 @@ const UpgradeStore = ({store, dispatch}) => {
     return(
         <div className="shop">
         <h1>Shop</h1>
-            <h1>Money: {store.money}</h1>
-            <button onClick={() => addMoney(dispatch)}>CHA-CHING</button>
-
-            <h1>TOTAL PLAYER MOD: {store.playerModifier}</h1>
+            <h2>Your Money: ${store.money}</h2>
+            {/* <button onClick={() => addMoney(dispatch)}>CHA-CHING</button> */}
+            <h2>Total Modifier Bonus: +{store.playerModifier}</h2>
 
         <div className="shop-container">
             <div className="shop-hats">
-                <h4>Hats</h4>
-                <h5>Current Hat: {findName(hats, hatId)}</h5>
-                <h5>Current Hat Mod :{findMod(hats, hatId)}</h5>
+                <h3>HATS</h3>
+                <h4>Current Hat: {findName(hats, hatId)}</h4>
+                <h4>Current Hat Mod :{findMod(hats, hatId)}</h4>
                 {hats.map((hat, index) =>
                     shopRenderHats(hat, index)
                 )}
             </div>
 
             <div className="shop-rods">
-                <h4>Rods</h4>
-                <h5>Current Rod: {findName(rods, rodId)}</h5>
-                <h5>Current Rod Mod :{findMod(rods, rodId)}</h5>
+                <h3>RODS</h3>
+                <h4>Current Rod: {findName(rods, rodId)}</h4>
+                <h4>Current Rod Mod :{findMod(rods, rodId)}</h4>
                 {rods.map((rod, index) =>
                     shopRenderRods(rod, index)
                 )}
             </div>
 
             <div className="shop-bait">
-                <h4>Bait</h4>
-                <h5>Current Bait: {findName(baits, baitId)}</h5>
-                <h5>Current Bait Mod: {findMod(baits, baitId)}</h5>
+                <h3>BAIT</h3>
+                <h4>Current Bait: {findName(baits, baitId)}</h4>
+                <h4>Current Bait Mod: {findMod(baits, baitId)}</h4>
                 {baits.map((bait, index) =>
                     shopRenderBaits(bait, index)
                 )}
