@@ -15,7 +15,13 @@ const playerReducer = (state, action) => {
     case 'setMoney':
       return{
         ...state,
-        "money": state.money + action.data
+        "money": parseInt(state.money) + parseInt(action.data)
+      }
+
+    case 'spendMoney':
+      return{
+        ...state,
+        "money": state.money - action.data
       }
 
     case 'setHat':
@@ -44,6 +50,15 @@ const playerReducer = (state, action) => {
           "rodId": action.data
         }
       }
+
+      case 'setMod':
+        return{
+          ...state,
+          "inventory" : {
+            ...state.inventory,
+            "rodId": action.data
+          }
+        }
 
     default: {
       return null

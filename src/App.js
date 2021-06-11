@@ -10,7 +10,6 @@ import UpgradeStore     from './components/UpgradeStore';
 import FirstLoad        from './components/FirstLoad'
 // utilities
 import loadPlayer       from './utils/loadPlayer' 
-import savePlayer       from  './utils/savePlayer'
 
 const App = () => {
   // const [player, setPlayer] = useState(initialStorage)
@@ -18,44 +17,25 @@ const App = () => {
     playerReducer,
     initialStorage
   )
-
-  const [input, setInput] = useState('')
-
+  const [hasName, setHasName] = useState(false)
 
   // onLoad
   useEffect(() => {
+    if(store.name) setHasName(true)
     loadPlayer(dispatch)
   },[])
-  
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    savePlayer(store)
-  } 
-
-  const handleChange = (event) => {
-    dispatch({
-      type: 'setName',
-      data: event.target.value
-    })
-  }
 
   return (
-    <div className="App">
-        {store.name ?
+    <div>
+        {hasName ?
         <>
           <PlayerContainer />
-          <CurrentFishBox/>
+          <CurrentFishBox dispatch={dispatch} store={store}/>
           <UpgradeStore />
           <PlayerInventory />
         </>:
-        <FirstLoad />
+        <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>
       }
-      <h1>Name: {store.name}</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} ></input>
-        <button type="submit" value={store.name}>Submit</button>
-      </form>
     </div>
   );
 }

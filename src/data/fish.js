@@ -13,119 +13,135 @@
 // left boot - $9999
 // shark fish 5 - $99999
 
-export const fish = [
-    {
-        "id": 1,
-        "fishName": "BASS",
-        "description": "Bet you're sick of catching these...",
-        "value": 1,
-        "rarity": 1,
-        "image": ""
-    },
-    {
-        "id": 2,
-        "fishName": "GOBLIN FISH",
-        "description": "Roll initiative!",
-        "value": 2,
-        "rarity": 1,
-        "image": ""
-    },
-    {
-        "id": 3,
-        "fishName": "PHISH",
-        "description": "This one seems fishy...",
-        "value": 500,
-        "rarity": 3,
-        "image": ""
-    },
-    {
-        "id": 4,
-        "fishName": "FISHERMAN",
-        "description": "Whoopsie daisy",
-        "value": 1000,
-        "rarity": 3,
-        "image": ""
-    },
-    {
-        "id": 5,
-        "fishName": "CREDIT FISH",
-        "description": "CHA-CHING!",
-        "value": 700,
-        "rarity": 3,
-        "image": ""
-    },
-    {
-        "id": 6,
-        "fishName": "FISHMAIL",
-        "description": "Would you like a rod enhancement?",
-        "value": 10,
-        "rarity": 2,
-        "image": ""
-    },
-    {
-        "id": 7,
-        "fishName": "DOGEFISH",
-        "description": "Woof!",
-        "value": 80,
-        "rarity": 2,
-        "image": ""
-    },
-    {
-        "id": 8,
-        "fishName": "FISHCOIN",
-        "description": "K walk,nxjcka,8*can fire Any 3rd hear 22 hi",
-        "value": 3000,
-        "rarity": 4,
-        "image": ""
-    },
-    {
-        "id": 9,
-        "fishName": "SHARK FISH",
-        "description": "You're funded!",
-        "value": 99999,
-        "rarity": 5,
-        "image": ""
-    },
-    {
-        "id": 10,
-        "fishName": "FISHBRO",
-        "description": "Hell yeah, bro!",
-        "value": 69,
-        "rarity": 2,
-        "image": ""
-    },
-    {
-        "id": 11,
-        "fishName": "NO FISH",
-        "description": "There's nothing here! It's still worth something though.",
-        "value": 400,
-        "rarity": 3,
-        "image": ""
-    },
-    {
-        "id": 12,
-        "fishName": "NEMO",
-        "description": "You found him!",
-        "value": 5000,
-        "rarity": 4,
-        "image": ""
-    },
-    {
-        "id": 13,
-        "fishName": "HOLY FISH",
-        "description": "Bless you!",
-        "value": 50,
-        "rarity": 2,
-        "image": ""
-    },
-    {
-        "id": 14,
-        "fishName": "LEFT BOOT",
-        "description": "Now we're talking",
-        "value": 9999,
-        "rarity": 4,
-        "image": ""
-    },
+const fish = {
+    common: [
+        {
+            "id": 1,
+            "name": "BASS",
+            "description": "Bet you're sick of catching these...",
+            "value": 1,
+            "image": "",
+            "rarity": "common"
+        },
+        {
+            "id": 2,
+            "name": "GOBLIN FISH",
+            "description": "Roll initiative!",
+            "value": 2,
+            "image": "",
+            "rarity": "common"
+        },
+        
+    ],
+    uncommon: [
+        {
+            "id": 6,
+            "name": "FISHMAIL",
+            "description": "Would you like a rod enhancement?",
+            "value": 10,
+            "image": "",
+            "rarity": "uncommon"
+        },
+        {
+            "id": 7,
+            "name": "DOGEFISH",
+            "description": "Woof!",
+            "value": 80,
+            "image": "",
+            "rarity": "uncommon"
+        },
+        {
+            "id": 10,
+            "name": "FISHBRO",
+            "description": "Hell yeah, bro!",
+            "value": 69,
+            "image": "",
+            "rarity": "uncommon"
+        },
+        {
+            "id": 13,
+            "name": "HOLY FISH",
+            "description": "Bless you!",
+            "value": 50,
+            "image": "",
+            "rarity": "uncommon"
+        },
+
+    ],
+    rare: [
+        {
+            "id": 3,
+            "name": "PHISH",
+            "description": "This one seems fishy...",
+            "value": 500,
+            "image": "",
+            "rarity": "rare"
+        },
+        {
+            "id": 4,
+            "name": "FISHERMAN",
+            "description": "Whoopsie daisy",
+            "value": 1000,
+            "image": "",
+            "rarity": "rare"
+        },
+        {
+            "id": 5,
+            "name": "CREDIT FISH",
+            "description": "CHA-CHING!",
+            "value": 700,
+            "image": "",
+            "rarity": "rare"
+        },
+        {
+            "id": 11,
+            "name": "NO FISH",
+            "description": "There's nothing here! It's still worth something though.",
+            "value": 400,
+            "image": "",
+            "rarity": "rare"
+        },
+
+    ],
+    exotic: [
+        {
+            "id": 8,
+            "name": "FISHCOIN",
+            "description": "K walk,nxjcka,8*can fire Any 3rd hear 22 hi",
+            "value": 3000,
+            "image": "",
+            "rarity": "exotic"
+        },
+        {
+            "id": 12,
+            "name": "NEMO",
+            "description": "You found him!",
+            "value": 5000,
+            "image": "",
+            "rarity": "exotic"
+        },
+        {
+            "id": 14,
+            "name": "LEFT BOOT",
+            "description": "Now we're talking",
+            "value": 9999,
+            "image": "",
+            "rarity": "exotic"
+        },
 
 
-]
+    ],
+    legendary: [
+        {
+            "id": 9,
+            "name": "SHARK FISH",
+            "description": "You're funded!",
+            "value": 99999,
+            "image": "",
+            "rarity": "legendary"
+        },
+    ]
+}
+
+
+export default fish

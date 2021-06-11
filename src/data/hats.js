@@ -13,7 +13,7 @@ export const hats = [
         "modifier": 1,
         "description":'If you put it on backwards you get +1 cool',
         "img":'' ,
-        "cost": 1
+        "cost": 20
      },
      {
         "id": 3,
@@ -21,7 +21,7 @@ export const hats = [
         "modifier": 1,
         "description":'Never wilts',
         "img":'' ,
-        "cost": 1
+        "cost": 10
      },
      {
         "id": 4,
@@ -29,7 +29,7 @@ export const hats = [
         "modifier": 1,
         "description":'Arr!',
         "img":'' ,
-        "cost": 1
+        "cost": 50
      },
      {
         "id": 5,
@@ -37,6 +37,6 @@ export const hats = [
         "modifier": 1,
         "description":'Only for Phish Royalty',
         "img":'',
-        "cost": 1 
+        "cost": 9999
      },
 ]
