@@ -3,6 +3,7 @@
 import fish from "../data/fish";
 import junk from "../data/junk";
 import React, { useState, useEffect } from "react";
+import savePlayer from "../utils/savePlayer"
 
 const CurrentFishBox = ({dispatch, store}) => {
   //this needs to be moved out but it can stay here for now until we fix it
@@ -32,28 +33,42 @@ const CurrentFishBox = ({dispatch, store}) => {
   };
 
   const [caughtFish, setCaughtFish] = useState(junk[0]);
+  const [counter, setCounter] = useState(0);
   
-  const handleClick = () =>{
-    const addVal = () => {
-      dispatch({
-        type: 'setMoney',
-        data: caughtFish['value']
-      })
-    }
-
-    setCaughtFish(decideResult())
-    addVal()
+  const addVal = () => {
+    dispatch({
+      type: 'setMoney',
+      data: caughtFish['value']
+    })
   }
+
+  const handleClick = () =>{
+    setCaughtFish(decideResult())
+    startCounter()
+  }
+
+  useEffect(() => {
+    addVal()
+  }, [caughtFish])
+
+  useEffect( () => {
+    if(counter) setTimeout(() => setCounter(counter - 1), 1000);
+  }, [counter]);
+  
+  const startCounter = () => setCounter(5);
+    
 
   return (
     <>
       <h1>Fish box</h1>
-      <button onClick={() => handleClick()}>
-        Click to PHISH
+      <button disabled={counter} onClick={() => handleClick()}>
+        {counter ? counter : "Click to PHISH"}
       </button>
       <p>{"You caught a " + caughtFish.name + " (" + caughtFish.rarity + ")"}</p>
       <p>"{caughtFish.description}"</p>
       <p>{store.money}</p>
+      
+            
     </>
   );
 };
