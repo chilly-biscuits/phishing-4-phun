@@ -34,6 +34,7 @@ const CurrentFishBox = ({dispatch, store}) => {
   const [caughtFish, setCaughtFish] = useState(junk[0]);
   
   const handleClick = () =>{
+    startCounter()
     const addVal = () => {
       dispatch({
         type: 'setMoney',
@@ -45,15 +46,26 @@ const CurrentFishBox = ({dispatch, store}) => {
     addVal()
   }
 
+  const [counter, setCounter] = useState(0);
+  
+  useEffect( () => {
+    if(counter) setTimeout(() => setCounter(counter - 1), 1000);
+  }, [counter]);
+  
+  const startCounter = () => setCounter(5);
+    
+
   return (
     <>
       <h1>Fish box</h1>
-      <button onClick={() => handleClick()}>
-        Click to PHISH
+      <button disabled={counter} onClick={() => handleClick()}>
+        {counter ? counter : "Click to PHISH"}
       </button>
       <p>{"You caught a " + caughtFish.name + " (" + caughtFish.rarity + ")"}</p>
       <p>"{caughtFish.description}"</p>
       <p>{store.money}</p>
+      
+            
     </>
   );
 };
