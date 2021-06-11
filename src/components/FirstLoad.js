@@ -1,4 +1,5 @@
 import savePlayer from "../utils/savePlayer"
+import {LandingPageDiv} from "../styles/landingPage"
 
 //this will run the first time a user opens the app to set the player name
 const FirstLoad = ({setHasName, store, dispatch}) => {
@@ -17,7 +18,7 @@ const FirstLoad = ({setHasName, store, dispatch}) => {
   }
 
   return(
-    <>
+    <LandingPageDiv>
       <h1>Welcome to Phishing for Phun</h1>
       <p>Please set your Phisher name:</p>
 
@@ -26,7 +27,7 @@ const FirstLoad = ({setHasName, store, dispatch}) => {
         <button type="submit" value={store.name}>Submit</button>
       </form>
         
-    </>
+    </LandingPageDiv>
   )
 }
 
