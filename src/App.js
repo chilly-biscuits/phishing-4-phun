@@ -61,11 +61,11 @@ const App = () => {
   return (
     <div>
         {hasName ?
-        <>
-          <PlayerContainer />
+        <div className="App">
+          {/* <PlayerContainer /> */}
           <CurrentFishBox dispatch={dispatch} store={store}/>
 
-          <button onClick={openModal}>Shop</button>
+          <button className="shop-button" onClick={openModal}>Shop</button>
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
@@ -74,8 +74,8 @@ const App = () => {
           >
             <UpgradeStore store={store} dispatch={dispatch} />
           </Modal>
-          <PlayerInventory />
-        </>:
+          {/* <PlayerInventory /> */}
+        </div>:
         <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>
       }
     </div>

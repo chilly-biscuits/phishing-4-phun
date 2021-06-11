@@ -2,7 +2,7 @@ export const rods = [
     {
        "id": 1,
        "name": 'Stick and string',
-       "modifier": 0,
+       "modifier": 1,
        "description":'Just some string tied to a stick',
        "img":'',
        "cost": 1
