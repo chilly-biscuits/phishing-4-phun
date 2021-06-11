@@ -26,7 +26,7 @@ const UpgradeStore = ({store, dispatch}) => {
         () => {
             handleTotalPlayerModifier(hatId, hats, rodId, rods, baitId, baits, dispatch);
         },
-        [hatId, rodId, baitId]
+        [hatId, rodId, baitId, dispatch]
     )
     
 
