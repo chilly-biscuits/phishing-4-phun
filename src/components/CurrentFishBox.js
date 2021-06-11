@@ -26,7 +26,7 @@ const CurrentFishBox = ({dispatch, store}) => {
       } else if (secondRoll > 900 && secondRoll < 999) {
         return fish.exotic[getFishVal(fish.exotic.length)];
       } else if (secondRoll === 1000) {
-        return fish.legendary[getFishVal(fish.legendary.length)];
+        return fish.legendary[0];
       }
     }
   };

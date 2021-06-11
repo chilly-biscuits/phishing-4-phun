@@ -30,7 +30,7 @@ const fish = {
             "value": 2,
             "image": "",
             "rarity": "common"
-        },
+        }
         
     ],
     uncommon: [
@@ -65,7 +65,7 @@ const fish = {
             "value": 50,
             "image": "",
             "rarity": "uncommon"
-        },
+        }
 
     ],
     rare: [
@@ -100,7 +100,7 @@ const fish = {
             "value": 400,
             "image": "",
             "rarity": "rare"
-        },
+        }
 
     ],
     exotic: [
@@ -127,7 +127,7 @@ const fish = {
             "value": 9999,
             "image": "",
             "rarity": "exotic"
-        },
+        }
 
 
     ],
@@ -139,7 +139,7 @@ const fish = {
             "value": 99999,
             "image": "",
             "rarity": "legendary"
-        },
+        }
     ]
 }
 

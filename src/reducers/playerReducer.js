@@ -1,10 +1,4 @@
 const playerReducer = (state, action) => {
-
-  // // working concept for function to calculate new Playermodifier value
-  // const calculateModifier = (oldItem, newItem) => {
-  //   return (state.playerModifier - oldItem) + newItem
-  // }
-  
   switch (action.type) {
     case 'setName':
       return{
@@ -41,7 +35,7 @@ const playerReducer = (state, action) => {
           "baitId": action.data
         }
       }
-    
+
     case 'setRod':
       return{
         ...state,
