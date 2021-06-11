@@ -64,6 +64,7 @@ const App = () => {
         <>
           <PlayerContainer />
           <CurrentFishBox dispatch={dispatch} store={store}/>
+
           <button onClick={openModal}>Shop</button>
           <Modal
             isOpen={modalIsOpen}
@@ -73,7 +74,6 @@ const App = () => {
           >
             <UpgradeStore store={store} dispatch={dispatch} />
           </Modal>
-
           <PlayerInventory />
         </>:
         <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>

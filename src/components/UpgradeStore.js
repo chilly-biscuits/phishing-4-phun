@@ -29,6 +29,56 @@ const UpgradeStore = ({store, dispatch}) => {
         [hatId, rodId, baitId, dispatch]
     )
     
+    const shopRenderHats = (hat, index) => {
+        if (hat.id !== parseInt(hatId)) {
+            return (
+                <div key={index}>
+                    <p>HAT: {hat.name}</p>
+                    <p>COST: ${hat.cost}</p>
+                    <p>MOD: {hat.modifier}</p>
+                    <button onClick={(event) => {
+                        handleHat(event, dispatch); 
+                        handleCost(event, hats, dispatch); 
+                    }}
+                        value={hat.id} disabled={correctFinances(hats, hat.id, store)}>Click me to buy a {hat.name}</button>
+                </div>
+            )
+        }
+    }
+
+    const shopRenderRods = (rod, index) => {
+        if (rod.id !== parseInt(rodId)) {
+            return (
+                <div key={index}>
+                    <p>ROD: {rod.name}</p>
+                    <p>COST: ${rod.cost}</p>
+                    <p>MOD: {rod.modifier}</p>
+                    <button onClick={(event) => {
+                        handleRod(event, dispatch); 
+                        handleCost(event, rods, dispatch); 
+                    }}
+                        value={rod.id} disabled={correctFinances(rods, rod.id, store)}>Click me to buy a {rod.name}</button>
+                </div>
+            )
+        }
+    }
+
+    const shopRenderBaits = (bait, index) => {
+        if (bait.id !== parseInt(baitId)) {
+            return (
+                <div key={index}>
+                    <p>BAIT: {bait.name}</p>
+                    <p>COST: ${bait.cost}</p>
+                    <p>MOD: {bait.modifier}</p>
+                    <button onClick={(event) => {
+                        handleBait(event, dispatch); 
+                        handleCost(event, baits, dispatch); 
+                    }}
+                        value={bait.id} disabled={correctFinances(baits, bait.id, store)}>Click me to buy a {bait.name}</button>
+                </div>
+            )
+        }
+    }
 
     return(
         <div className="shop">
@@ -41,58 +91,31 @@ const UpgradeStore = ({store, dispatch}) => {
         <div className="shop-container">
             <div className="shop-hats">
                 <h4>Hats</h4>
-                {hats.map((hat, index) => 
-                    <div key={index}>
-                        <p>HAT: {hat.name}</p>
-                        <p>COST: ${hat.cost}</p>
-                        <button onClick={(event) => {
-                            handleHat(event, dispatch); 
-                            handleCost(event, hats, dispatch); 
-                        }}
-                            value={hat.id} disabled={correctFinances(hats, hat.id, store)}>Click me to buy a {hat.name}</button>
-                    </div>
+                <h5>Current Hat: {findName(hats, hatId)}</h5>
+                <h5>Current Hat Mod :{findMod(hats, hatId)}</h5>
+                {hats.map((hat, index) =>
+                    shopRenderHats(hat, index)
                 )}
-                <p>Current Hat: {findName(hats, hatId)}</p>
-                <p>Current Hat Mod :{findMod(hats, hatId)}</p>
             </div>
 
             <div className="shop-rods">
                 <h4>Rods</h4>
-                {rods.map((rod, index) => 
-                    <div key={index}>
-                        <p>ROD: {rod.name}</p>
-                        <p>COST: ${rod.cost}</p>
-                        <button onClick={(event) => {
-                            handleRod(event, dispatch); 
-                            handleCost(event, rods, dispatch); 
-                        }} 
-                            value={rod.id} disabled={correctFinances(rods, rod.id, store)}>Click me to buy a {rod.name}</button>
-                    </div>
+                <h5>Current Rod: {findName(rods, rodId)}</h5>
+                <h5>Current Rod Mod :{findMod(rods, rodId)}</h5>
+                {rods.map((rod, index) =>
+                    shopRenderRods(rod, index)
                 )}
-                <p>Current Rod: {findName(rods, rodId)}</p>
-                <p>Current Rod Mod :{findMod(rods, rodId)}</p>
             </div>
 
             <div className="shop-bait">
                 <h4>Bait</h4>
-                {baits.map((bait, index) => 
-                    <div key={index}>
-                        <p>BAIT: {bait.name}</p>
-                        <p>COST: ${bait.cost}</p>
-                        <button onClick={(event) => {
-                            handleBait(event, dispatch); 
-                            handleCost(event, baits, dispatch); 
-                        }} 
-                            value={bait.id} disabled={correctFinances(baits, bait.id, store)}>Click me to buy a {bait.name}</button>
-                    </div>
+                <h5>Current Bait: {findName(baits, baitId)}</h5>
+                <h5>Current Bait Mod: {findMod(baits, baitId)}</h5>
+                {baits.map((bait, index) =>
+                    shopRenderBaits(bait, index)
                 )}
-                <p>Current Bait: {findName(baits, baitId)}</p>
-                <p>Current Bait Mod: {findMod(baits, baitId)}</p>
             </div>
-
-
         </div>
-
         </div>
     )
 }
