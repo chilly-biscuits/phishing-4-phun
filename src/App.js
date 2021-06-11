@@ -1,5 +1,6 @@
 import React, {useEffect, useReducer, useState} from 'react';
-import initialStorage   from './data/initialStorage'
+import initialStorage   from './data/initialStorage'; 
+import Modal            from 'react-modal';
 // reducer-state
 import playerReducer    from './reducers/playerReducer.js'
 // components
@@ -18,6 +19,7 @@ const App = () => {
     initialStorage
   )
   const [hasName, setHasName] = useState(false)
+  const [modalIsOpen,setIsOpen] = React.useState(false);
 
   // onLoad
   useEffect(() => {
@@ -26,13 +28,46 @@ const App = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
+  Modal.setAppElement('#root');
+
+  const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)',
+      width : '80vw',
+      height: '80vh'
+    }
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  }
+
+  const openModal = () => {
+    setIsOpen(true);
+  }
+
+
   return (
     <div>
         {hasName ?
         <>
           <PlayerContainer />
           <CurrentFishBox dispatch={dispatch} store={store}/>
-          <UpgradeStore store={store} dispatch={dispatch} />/>
+          <button onClick={openModal}>Shop</button>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Shop"
+          >
+            <UpgradeStore store={store} dispatch={dispatch} />
+          </Modal>
+
           <PlayerInventory />
         </>:
         <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>
