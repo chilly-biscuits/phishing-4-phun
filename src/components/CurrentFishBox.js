@@ -2,9 +2,9 @@
 //While fishing in process a progress bar appears and the 'fish' button is disabled
 import fish from "../data/fish";
 import junk from "../data/junk";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const CurrentFishBox = () => {
+const CurrentFishBox = ({dispatch, store}) => {
   //this needs to be moved out but it can stay here for now until we fix it
   const decideResult = () => {
     const caughtCategory = Math.floor(Math.random() * 2) ?  "junk" : "fish"
@@ -31,19 +31,29 @@ const CurrentFishBox = () => {
     }
   };
 
-  const [caughtFish, setCaughtFish] = useState({});
+  const [caughtFish, setCaughtFish] = useState(junk[0]);
+  
   const handleClick = () =>{
-    setCaughtFish(decideResult())
+    const addVal = () => {
+      dispatch({
+        type: 'setMoney',
+        data: caughtFish['value']
+      })
+    }
 
+    setCaughtFish(decideResult())
+    addVal()
   }
+
   return (
     <>
       <h1>Fish box</h1>
       <button onClick={() => handleClick()}>
         Click to PHISH
       </button>
-      <p>{"You caught a " + caughtFish.name + "(" + caughtFish.rarity + ")"}</p>
+      <p>{"You caught a " + caughtFish.name + " (" + caughtFish.rarity + ")"}</p>
       <p>"{caughtFish.description}"</p>
+      <p>{store.money}</p>
     </>
   );
 };

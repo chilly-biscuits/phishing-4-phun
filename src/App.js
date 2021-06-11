@@ -30,7 +30,7 @@ const App = () => {
         {hasName ?
         <>
           <PlayerContainer />
-          <CurrentFishBox/>
+          <CurrentFishBox dispatch={dispatch} store={store}/>
           <UpgradeStore />
           <PlayerInventory />
         </>:
