@@ -26,7 +26,7 @@ export const hats = [
      {
         "id": 4,
         "name": 'Pirate Hat',
-        "modifier": 1,
+        "modifier": 5,
         "description":'Arr!',
         "img":'' ,
         "cost": 50

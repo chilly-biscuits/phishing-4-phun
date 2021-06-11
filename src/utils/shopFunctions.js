@@ -1,5 +1,4 @@
     //UPDATE CURRENT ITEM
-    
     export const handleHat = (event, dispatch) => {
         dispatch({
           type: 'setHat',
@@ -39,6 +38,18 @@
         return (
             arr.find(i => i.id === parseInt(input)).cost
         )
+    }
+
+    //TOTAL MOD
+    export const handleTotalPlayerModifier = (hatId, hats, rodId, rods, baitId, baits, dispatch) => {
+        const hat = findMod(hats, hatId)
+        const rod = findMod(rods, rodId)
+        const bait = findMod(baits, baitId)
+        console.log("hat: ", hat, "rod: ", rod, "bait: ", bait)
+        dispatch({
+            type: 'setMod',
+            data: hat + rod + bait
+        })
     }
 
     //SPEND MONEY - uses find cost
