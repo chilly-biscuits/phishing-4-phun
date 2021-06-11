@@ -1,4 +1,3 @@
-
 //algae - 1
 //newspaper - 2
 //left boot - 2
@@ -7,6 +6,7 @@
 //mimic - 4
 //crab - 4
 //you - 5
+/* eslint-disable no-dupe-keys */
 
 const junk = [
     {

@@ -15,7 +15,7 @@ const playerReducer = (state, action) => {
     case 'setMoney':
       return{
         ...state,
-        "money": state.money + action.data
+        "money": parseInt(state.money) + parseInt(action.data)
       }
 
     case 'spendMoney':

@@ -31,8 +31,8 @@ const App = () => {
         {hasName ?
         <>
           <PlayerContainer />
-          <CurrentFishBox/>
-          <UpgradeStore store={store} dispatch={dispatch} />
+          <CurrentFishBox dispatch={dispatch} store={store}/>
+          <UpgradeStore store={store} dispatch={dispatch} />/>
           <PlayerInventory />
         </>:
         <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>
