@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 const CurrentFishBox = ({dispatch, store}) => {
   //this needs to be moved out but it can stay here for now until we fix it
   const decideResult = () => {
-    const caughtCategory = Math.floor(Math.random() * 2) ?  "junk" : "fish"
+    const caughtCategory = Math.floor(Math.random() * 3) ?  "fish" : "junk"
     
     //if it rolled junk pick a random junk item
     if (caughtCategory === "junk") {
@@ -32,29 +32,51 @@ const CurrentFishBox = ({dispatch, store}) => {
   };
 
   const [caughtFish, setCaughtFish] = useState(junk[0]);
+  const [counter, setCounter] = useState(0);
   
-  const handleClick = () =>{
-    const addVal = () => {
-      dispatch({
-        type: 'setMoney',
-        data: caughtFish['value']
-      })
-    }
+  const addVal = () => {
+    dispatch({
+      type: 'setMoney',
+      data: caughtFish['value']
+    })
+  }
 
+  const handleClick = () =>{
     setCaughtFish(decideResult())
+    startCounter()
+  }
+
+  useEffect(() => {
     addVal()
+  }, [caughtFish])
+
+  useEffect( () => {
+    if(counter) setTimeout(() => setCounter(counter - 1), 1000);
+  }, [counter]);
+  
+  const startCounter = () => setCounter(5);
+    
+  const colorForRarity = () => {
+    const fish = caughtFish 
+    if(fish.rarity === "common"){ return "#60A5FA"}
+    if(fish.rarity === "uncommon"){ return "#34d390"}
+    if(fish.rarity === "rare"){ return "#8B5CF6"}
+    if(fish.rarity === "exotic"){ return "#fbbf24"}
+    if(fish.rarity === "legendary"){ return "#f472b6"}
+    if(fish.rarity === "junk"){return "#d1d5db"}
   }
 
   return (
-    <>
-      <h1>Fish box</h1>
-      <button onClick={() => handleClick()}>
-        Click to PHISH
+    <div className="fish-box">
+      <button disabled={counter} onClick={() => handleClick()}>
+        {counter ? counter : "Click to PHISH 🎣"}
       </button>
-      <p>{"You caught a " + caughtFish.name + " (" + caughtFish.rarity + ")"}</p>
-      <p>"{caughtFish.description}"</p>
-      <p>{store.money}</p>
-    </>
+      <h3 style={{backgroundColor: `${colorForRarity()}`, padding: "2px 8px", borderRadius: "10px"}} >{"You caught a " + caughtFish.name + " (" + caughtFish.rarity + ")"}</h3>
+      <h4 style={{fontStyle : "italic", color: "#444"}}>"{caughtFish.description}"</h4>
+      <h3>{store.name}'s Money: <span style={{padding: "2px 8px", backgroundColor: "#333", color: "orange", borderRadius:"5px"}}>${store.money}</span></h3>
+      
+            
+    </div>
   );
 };
 

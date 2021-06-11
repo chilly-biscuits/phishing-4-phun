@@ -2,41 +2,41 @@ export const baits = [
     {
        "id": 1,
        "name": 'Bread',
-       "modifier": 0,
+       "modifier": 1,
        "description":'Do phish even eat bread?',
        "img":'' ,
        "cost": 1
     },
     {
-        "id": 2,
-        "name": 'Shark Bait',
-        "modifier": 1,
-        "description":'Ohh Ha Ha',
-        "img":'' ,
-        "cost": 15
-     },
-     {
-        "id": 3,
-        "name": 'Worms',
-        "modifier": 1,
-        "description":'Yum...',
-        "img":'' ,
-        "cost": 2
-     },
-     {
+       "id": 2,
+       "name": 'Worms',
+       "modifier": 2,
+       "description":'Yum...',
+       "img":'' ,
+       "cost": 20
+      },
+      {
+          "id": 3,
+          "name": 'Shark Bait',
+          "modifier": 4,
+          "description":'Ohh Ha Ha',
+          "img":'' ,
+          "cost": 100
+       },
+      {
         "id": 4,
         "name": 'Glowing bait',
-        "modifier": 1,
+        "modifier": 7,
         "description":"I don't know if this is healthy",
         "img":'' ,
-        "cost": 10
+        "cost": 5000
      },
      {
         "id": 5,
         "name": 'Pizza',
-        "modifier": 1,
+        "modifier": 10,
         "description":'Everybody loves Pizza',
         "img":'' ,
-        "cost": 5
+        "cost": 9999
      },
 ]

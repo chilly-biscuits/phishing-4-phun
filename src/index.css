@@ -12,11 +12,36 @@ code {
     monospace;
 }
 
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid red;
+}
+
 .shop {
   display: flex;
   width: 80vw;
   flex-direction: column;
   text-align: center;
+  background:lightgray;
+}
+
+.shop-button {
+  height: 30px;
+  width: 200px;
+  background: whitesmoke;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.shop-button button:hover {
+  background: #eafdd7;
 }
 
 .shop-container {
@@ -32,14 +57,65 @@ code {
 .shop-hats {
   width: 30%;
   background-color: lightgoldenrodyellow;
+  box-shadow: 2px 5px 10px gray;
+  border-radius: 5px;
 }
 
 .shop-rods {
   width: 30%;
   background-color: lightsteelblue;
+  box-shadow: 2px 5px 10px gray;
+  border-radius: 5px;
 }
 
 .shop-bait {
   width: 30%;
   background-color: lightpink;
+  box-shadow: 2px 5px 10px gray;
+  border-radius: 5px;
+}
+
+.item-card {
+  background-color: white;
+  opacity: 0.8;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px gray;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px gray;
+}
+
+.item-card button {
+  height: 30px;
+  width: 100%;
+  background: whitesmoke;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.item-card button:hover {
+  background: #eafdd7;
+}
+
+.fish-box {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fish-box button {
+  height: 30px;
+  width: 200px;
+  background: whitesmoke;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.fish-box button:hover {
+  background: #eafdd7;
 }

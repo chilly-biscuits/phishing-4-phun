@@ -11,6 +11,7 @@ import UpgradeStore     from './components/UpgradeStore';
 import FirstLoad        from './components/FirstLoad'
 // utilities
 import loadPlayer       from './utils/loadPlayer' 
+import savePlayer       from './utils/savePlayer' 
 
 const App = () => {
   // const [player, setPlayer] = useState(initialStorage)
@@ -20,13 +21,17 @@ const App = () => {
   )
   const [hasName, setHasName] = useState(false)
   const [modalIsOpen,setIsOpen] = React.useState(false);
-
-  // onLoad
+  
   useEffect(() => {
-    if(store.name) setHasName(true)
+    if(localStorage.getItem('player')){
+      if(JSON.parse(localStorage.getItem('player')).name) setHasName(true)
+    }
     loadPlayer(dispatch)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  }, [])
+
+  useEffect(() => {
+    savePlayer(store)
+  }, [store.money])
 
   Modal.setAppElement('#root');
 
@@ -45,6 +50,7 @@ const App = () => {
 
   const closeModal = () => {
     setIsOpen(false);
+    savePlayer(store)
   }
 
   const openModal = () => {
@@ -55,10 +61,11 @@ const App = () => {
   return (
     <div>
         {hasName ?
-        <>
-          <PlayerContainer />
+        <div className="App">
+          {/* <PlayerContainer /> */}
           <CurrentFishBox dispatch={dispatch} store={store}/>
-          <button onClick={openModal}>Shop</button>
+
+          <button className="shop-button" onClick={openModal}>Shop</button>
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
@@ -67,9 +74,8 @@ const App = () => {
           >
             <UpgradeStore store={store} dispatch={dispatch} />
           </Modal>
-
-          <PlayerInventory />
-        </>:
+          {/* <PlayerInventory /> */}
+        </div>:
         <FirstLoad store={store} dispatch={dispatch} setHasName={setHasName}/>
       }
     </div>
