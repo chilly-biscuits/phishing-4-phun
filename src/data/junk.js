@@ -14,7 +14,6 @@ const junk = [
         "name": "ALGAE",
         "description": "I dare you to lick it.",
         "value": 0,
-        "rarity": 3,
         "image": "",
         "rarity": "junk"
     },
@@ -23,7 +22,6 @@ const junk = [
         "name": "NEWSPAPER",
         "description": "Do people still buy these?",
         "value": 0,
-        "rarity": 2,
         "image": "",
         "rarity": "junk"
     },
@@ -32,7 +30,6 @@ const junk = [
         "name": "RIGHT BOOT",
         "description": "If this was a left boot it might be worth something.",
         "value": 0,
-        "rarity": 2,
         "image": "",
         "rarity": "junk"
     },
@@ -41,7 +38,6 @@ const junk = [
         "name": "ROCK",
         "description": "SCISSORS! Damn...",
         "value": 0,
-        "rarity": 2,
         "image": "",
         "rarity": "junk"
     },
@@ -50,7 +46,6 @@ const junk = [
         "name": "IRON",
         "description": "If this was a mining game, this would be worth something.",
         "value": 0,
-        "rarity": 3,
         "image": "",
         "rarity": "junk"
     },
@@ -59,7 +54,6 @@ const junk = [
         "name": "MIMIC",
         "description": "Yay! You caught an OH SHI-",
         "value": -100,
-        "rarity": 2,
         "image": "",
         "rarity": "junk"
     },
@@ -68,7 +62,6 @@ const junk = [
         "name": "CRAB",
         "description": "Crabs are priceless. Better put him back.",
         "value": 0,
-        "rarity": 2,
         "image": "",
         "rarity": "junk"
     },
@@ -77,7 +70,6 @@ const junk = [
         "name": "YOU",
         "description": "Get some aloe for that burn lol.",
         "value": 0,
-        "rarity": 2,
         "image": "",
         "rarity": "junk"
     }
