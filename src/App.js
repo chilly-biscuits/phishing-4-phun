@@ -23,6 +23,7 @@ const App = () => {
   useEffect(() => {
     if(store.name) setHasName(true)
     loadPlayer(dispatch)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (
