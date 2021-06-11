@@ -60,7 +60,7 @@ const CurrentFishBox = ({dispatch, store}) => {
     const fish = caughtFish 
     if(fish.rarity === "common"){ return "#60A5FA"}
     if(fish.rarity === "uncommon"){ return "#34d390"}
-    if(fish.rarity === "rare"){ return "#4c1d95"}
+    if(fish.rarity === "rare"){ return "#8B5CF6"}
     if(fish.rarity === "exotic"){ return "#fbbf24"}
     if(fish.rarity === "legendary"){ return "#f472b6"}
     if(fish.rarity === "junk"){return "#d1d5db"}
