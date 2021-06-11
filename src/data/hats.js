@@ -2,7 +2,7 @@ export const hats = [
     {
        "id": 1,
        "name": 'Bucket Hat',
-       "modifier": 0,
+       "modifier": 1,
        "description":'A fine hat for a new phisher',
        "img":'',
        "cost": 1 
@@ -10,7 +10,7 @@ export const hats = [
     {
         "id": 2,
         "name": 'Baseball cap',
-        "modifier": 1,
+        "modifier": 2,
         "description":'If you put it on backwards you get +1 cool',
         "img":'' ,
         "cost": 20
@@ -18,23 +18,23 @@ export const hats = [
      {
         "id": 3,
         "name": 'Flower Crown',
-        "modifier": 1,
+        "modifier": 4,
         "description":'Never wilts',
         "img":'' ,
-        "cost": 10
+        "cost": 100
      },
      {
         "id": 4,
         "name": 'Pirate Hat',
-        "modifier": 5,
+        "modifier": 7,
         "description":'Arr!',
         "img":'' ,
-        "cost": 50
+        "cost": 5000
      },
      {
         "id": 5,
         "name": 'Crown',
-        "modifier": 1,
+        "modifier": 10,
         "description":'Only for Phish Royalty',
         "img":'',
         "cost": 9999
