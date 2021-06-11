@@ -10,31 +10,31 @@ export const rods = [
     {
         "id": 2,
         "name": 'Old Rod',
-        "modifier": 1,
+        "modifier": 2,
         "description":'Looks pretty beaten up but should do the job',
-        "img":'',
-        "cost": 5
-     },
-     {
-        "id": 3,
-        "name": 'Normal Rod',
-        "modifier": 1,
-        "description":'A regular rod',
-        "img":'',
-        "cost": 20
-     },
-     {
-        "id": 4,
-        "name": 'Red Stripe Rod',
-        "modifier": 1,
-        "description":'The same as the normal rod but faster',
         "img":'',
         "cost": 200
      },
      {
+        "id": 3,
+        "name": 'Normal Rod',
+        "modifier": 4,
+        "description":'A regular rod',
+        "img":'',
+        "cost": 1000
+     },
+     {
+        "id": 4,
+        "name": 'Red Stripe Rod',
+        "modifier": 7,
+        "description":'The same as the normal rod but faster',
+        "img":'',
+        "cost": 5000
+     },
+     {
         "id": 5,
         "name": 'Gold Rod',
-        "modifier": 1,
+        "modifier": 10,
         "description":'So fancy!',
         "img":'',
         "cost": 99999
