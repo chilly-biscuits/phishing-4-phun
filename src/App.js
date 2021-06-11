@@ -11,6 +11,7 @@ import UpgradeStore     from './components/UpgradeStore';
 import FirstLoad        from './components/FirstLoad'
 // utilities
 import loadPlayer       from './utils/loadPlayer' 
+import savePlayer       from './utils/savePlayer' 
 
 const App = () => {
   // const [player, setPlayer] = useState(initialStorage)
@@ -20,13 +21,13 @@ const App = () => {
   )
   const [hasName, setHasName] = useState(false)
   const [modalIsOpen,setIsOpen] = React.useState(false);
-
-  // onLoad
+  
   useEffect(() => {
-    if(store.name) setHasName(true)
+    if(localStorage.getItem('player')){
+      if(JSON.parse(localStorage.getItem('player')).name) setHasName(true)
+    }
     loadPlayer(dispatch)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  }, [])
 
   Modal.setAppElement('#root');
 
@@ -45,6 +46,7 @@ const App = () => {
 
   const closeModal = () => {
     setIsOpen(false);
+    savePlayer(store)
   }
 
   const openModal = () => {

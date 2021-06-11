@@ -7,7 +7,7 @@ const FirstLoad = ({setHasName, store, dispatch}) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     savePlayer(store)
-    if(store.name) setHasName(true)
+    if(store.name)setHasName(true)
   } 
 
   const handleChange = (event) => {
